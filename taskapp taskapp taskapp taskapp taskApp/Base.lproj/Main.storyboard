@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zYv-95-Q4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,12 +80,12 @@
                         <outlet property="contentsTextView" destination="cmb-FD-nzw" id="5bo-G6-4nu"/>
                         <outlet property="datePicker" destination="Xrf-aY-4vA" id="nbo-bR-VxA"/>
                         <outlet property="titleTextField" destination="EQY-dc-K3J" id="EVN-tA-E2e"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="cellSegue" id="x2b-LK-Prq"/>
+                        <segue destination="Lyv-8R-4rx" kind="show" identifier="cellSegue" id="x2b-LK-Prq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eea-j3-5Wz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="-7"/>
+            <point key="canvasLocation" x="2685" y="314"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xj2-JL-pYS">
-                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="vIq-3U-fDT" detailTextLabel="VIC-f1-eHQ" style="IBUITableViewCellStyleSubtitle" id="QuV-b2-zpW">
@@ -135,14 +135,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="X18-72-2mb">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="shq-SV-W1B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="X18-72-2mb">
                             <connections>
                                 <segue destination="nDF-wb-Ncn" kind="show" identifier="" id="eMy-AU-bnC"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="shq-SV-W1B"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="xj2-JL-pYS" id="wOO-HV-2lr"/>
@@ -150,29 +150,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="-8"/>
+            <point key="canvasLocation" x="2685" y="-512"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sVR-2i-vJd">
+        <scene sceneID="TDb-ad-2Lo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zYv-95-Q4L" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lyv-8R-4rx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V3a-ot-mFM">
+                    <navigationItem key="navigationItem" id="ckt-rj-yI8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wp9-hE-a1i">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LVs-sn-AzY"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xTV-UK-6DF"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IJr-Sc-GeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXK-Ly-f7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="674"/>
+            <point key="canvasLocation" x="1393" y="314"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eMy-AU-bnC"/>
-        <segue reference="x2b-LK-Prq"/>
     </inferredMetricsTieBreakers>
 </document>
