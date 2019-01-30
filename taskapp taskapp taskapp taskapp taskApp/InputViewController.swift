@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RealmSwift    // 追加する
-import UserNotifications    // 追加
+import RealmSwift
+import UserNotifications
 
 class InputViewController: UIViewController {
 
@@ -16,8 +16,10 @@ class InputViewController: UIViewController {
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    let realm = try! Realm()    // 追加する
-    var task: Task!   // 追加する
+    @IBOutlet weak var categoryTextField: UITextField!
+    
+    let realm = try! Realm()
+    var task: Task!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        categoryTextField.text = task.category
     }
     
     @objc func dismissKeyboard(){
@@ -37,21 +40,20 @@ class InputViewController: UIViewController {
         view.endEditing(true)
     }
     
-    // 追加する
     override func viewWillDisappear(_ animated: Bool) {
         try! realm.write {
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
+            self.task.category = self.categoryTextField.text!
             self.realm.add(self.task, update: true)
         }
-        
-        setNotification(task: task)   // 追加
+        setNotification(task: task)
         
         super.viewWillDisappear(animated)
     }
     
-    // タスクのローカル通知を登録する --- ここから ---
+    // タスクのローカル通知を登録する
     func setNotification(task: Task) {
         let content = UNMutableNotificationContent()
         // タイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
@@ -89,9 +91,7 @@ class InputViewController: UIViewController {
                 print("---------------/")
             }
         }
-    } // --- ここまで追加 ---
-    
-    
+    }
     /*
     // MARK: - Navigation
 
@@ -101,5 +101,4 @@ class InputViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
